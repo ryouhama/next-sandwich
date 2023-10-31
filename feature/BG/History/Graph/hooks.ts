@@ -1,5 +1,4 @@
 import { History } from "../types";
-import { format } from "date-fns"
 
 export const useGraphData = (histories: History[]) => {
   return histories

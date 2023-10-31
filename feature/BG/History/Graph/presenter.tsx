@@ -7,8 +7,7 @@ type Props = {
   data: any
 }
 
-
-export const HistoryRatingGraphPresenter: React.FC<Props> = ({ data }) => {
+export function HistoryRatingGraphPresenter({ data }: Props) {
   return (
     <Box>
       <LineChart width={730} height={250} data={data}

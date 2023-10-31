@@ -3,7 +3,7 @@ import { fetchHistories } from "../apis"
 import { useGraphData } from "./hooks"
 import { HistoryRatingGraphPresenter } from "./presenter"
 
-export const HistoryRatingGraphContainer: FC = () => {
+export function HistoryRatingGraphContainer() {
   const histories = use(fetchHistories())
   const data = useGraphData(histories)
 
