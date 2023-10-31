@@ -1,1 +1,1 @@
-export { HistoryRatingGraphContainer as HistoryRatingGraph } from './container'
+export { HistoryRatingGraphContainer as HistoryRatingGraph } from "./container";

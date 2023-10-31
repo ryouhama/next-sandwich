@@ -1,5 +1,5 @@
 export type History = {
-  id: number,
-  date: Date,
-  rating: number
-}
+  id: number;
+  date: Date;
+  rating: number;
+};

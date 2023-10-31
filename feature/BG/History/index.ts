@@ -1,1 +1,1 @@
-export { HistoryRatingGraph } from './Graph'
+export { HistoryRatingGraph } from "./Graph";
