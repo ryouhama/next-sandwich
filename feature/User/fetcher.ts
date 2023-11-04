@@ -1,9 +1,9 @@
-type User = { id: number; name: string };
+type User = { id: number; name: string; isAuthenticated: boolean };
 
 const demoUser: User[] = [
-  { id: 1, name: "John" },
-  { id: 2, name: "Jane" },
-  { id: 3, name: "Jack" },
+  { id: 1, name: "John", isAuthenticated: true },
+  { id: 2, name: "Jane", isAuthenticated: false },
+  { id: 3, name: "Jack", isAuthenticated: true },
 ];
 
 export const fetchUser = async (userId: number) => {

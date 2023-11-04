@@ -1,19 +1,20 @@
-"use client";
-
-import { Container, Box } from "@chakra-ui/react";
-import { Suspense } from "react";
-import { HistoryRatingGraph } from "@/feature/BG/History";
+import { use, Suspense } from "react";
+import { Box } from "@chakra-ui/react";
+import { HistoryRatingLineGraph, UserRating, UserRatingLoading } from "@/feature/BG/History";
+import { fetchUser } from "@/feature/User/fetcher";
 
 export default function Home() {
+  const dammyUserId = 1;
+  const { user } = use(fetchUser(dammyUserId));
+
   return (
-    <main>
-      <Container maxW={"7xl"}>
-        <Box ml={{ base: 0, md: 60 }} p="4">
-          <Suspense fallback={<div>Loading...</div>}>
-            <HistoryRatingGraph />
-          </Suspense>
-        </Box>
-      </Container>
-    </main>
+    <Box p="4">
+      <Suspense fallback={<UserRatingLoading />}>
+        <UserRating />
+      </Suspense>
+      <Suspense fallback={<UserRatingLoading />}>
+        <HistoryRatingLineGraph />
+      </Suspense>
+    </Box>
   );
 }
