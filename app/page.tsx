@@ -1,7 +1,7 @@
-import { use, Suspense } from "react";
+import { use } from "react";
 import { Box } from "@chakra-ui/react";
-import { HistoryRatingLineGraph, UserRating, UserRatingLoading } from "@/feature/BG/History";
 import { fetchUser } from "@/feature/User/fetcher";
+import { DashboardLayout } from "./_DashboardLayout";
 
 export default function Home() {
   const dammyUserId = 1;
@@ -9,12 +9,7 @@ export default function Home() {
 
   return (
     <Box p="4">
-      <Suspense fallback={<UserRatingLoading />}>
-        <UserRating />
-      </Suspense>
-      <Suspense fallback={<UserRatingLoading />}>
-        <HistoryRatingLineGraph />
-      </Suspense>
+      <DashboardLayout />
     </Box>
   );
 }
