@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { FiHome, FiTrendingUp, FiCompass, FiStar, FiSettings } from "react-icons/fi";
+import { Box } from "@chakra-ui/react";
+import { PageLayout } from "@/component";
 import { Providers } from "./providers";
-import { PageLayout } from "./_PageLayout";
+import { SideBar } from "./_SideBar";
 
 export const metadata: Metadata = {
   title: "Battle Ground Rating",
@@ -13,7 +16,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <main>
           <Providers>
-            <PageLayout>{children}</PageLayout>
+            <PageLayout>
+              <SideBar />
+              <Box ml={{ base: 0, md: 60 }} p="4">
+                {children}
+              </Box>
+            </PageLayout>
           </Providers>
         </main>
       </body>
