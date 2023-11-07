@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { FiHome, FiTrendingUp, FiCompass, FiStar, FiSettings } from "react-icons/fi";
-import { Box } from "@chakra-ui/react";
-import { PageLayout } from "@/component";
+import { PageLayout, ContentLayout } from "@/component";
 import { Providers } from "./providers";
 import { SideBar } from "./_SideBar";
 
@@ -18,9 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>
             <PageLayout>
               <SideBar />
-              <Box ml={{ base: 0, md: 60 }} p="4">
-                {children}
-              </Box>
+              <ContentLayout>{children}</ContentLayout>
             </PageLayout>
           </Providers>
         </main>
